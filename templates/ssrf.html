@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSRF Vulnerable</title>
+</head>
+<body>
+
+<h1>🔴 SSRF Vulnerable</h1>
+
+<p>
+    Enter a URL and the server will fetch it for you.
+</p>
+
+<form method="POST" action="/ssrf">
+
+    <label>URL:</label><br>
+
+    <input
+        type="text"
+        name="url"
+        placeholder="http://example.com"
+        style="width:400px;"
+        required
+    >
+
+    <br><br>
+
+    <button type="submit">Fetch URL</button>
+
+</form>
+
+<hr>
+
+<h3>Try the internal server:</h3>
+
+<code>http://127.0.0.1:5003/admin</code>
+
+<br><br>
+
+<code>http://127.0.0.1:5003/api/internal</code>
+
+{% if error %}
+
+<hr>
+
+<p style="color:red;">
+    Error: {{ error }}
+</p>
+
+{% endif %}
+
+{% if result %}
+
+<hr>
+
+<h2>Response</h2>
+
+<p>
+    Status: <strong>{{ result.status }}</strong>
+</p>
+
+<pre>{{ result.content }}</pre>
+
+{% endif %}
+
+<hr>
+
+<p style="color:red;">
+    ⚠️ This endpoint is intentionally vulnerable to SSRF.
+</p>
+
+<a href="/ssrf-secure">Go to Secure SSRF</a>
+
+</body>
+</html>

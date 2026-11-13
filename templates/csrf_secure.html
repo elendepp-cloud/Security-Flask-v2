@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSRF Secure</title>
+</head>
+
+<body>
+
+    <h1>🟢 CSRF Secure </h1>
+
+    <p>
+        Logged in as:
+        <strong>{{ username }}</strong>
+    </p>
+
+    <p>
+        Current email:
+        <strong>{{ email }}</strong>
+    </p>
+
+    <hr>
+
+    <h2>Change Email</h2>
+
+    <form method="POST" action="/csrf-secure-change-email">
+
+        <input
+            type="hidden"
+            name="csrf_token"
+            value="{{ csrf_token() }}"
+        >
+
+        <label>New email:</label><br>
+
+        <input
+            type="email"
+            name="email"
+            required
+        >
+
+        <br><br>
+
+        <button type="submit">
+            Change Email
+        </button>
+
+    </form>
+
+    <hr>
+
+    <p>
+        🛡️ This page is protected with a CSRF token.
+    </p>
+
+    <a href="/">← Back to main menu</a>
+
+    <br><br>
+
+    <a href="/csrf-logout">Logout</a>
+
+</body>
+</html>

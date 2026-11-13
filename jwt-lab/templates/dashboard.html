@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JWT Dashboard</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+
+    <p>Username: {{ username }}</p>
+    <p>Role: {{ role }}</p>
+
+    {% if secure %}
+        <p>JWT signature verified.</p>
+    {% else %}
+        <p>Warning: JWT signature is not verified!</p>
+    {% endif %}
+
+    <p><a href="/login">Back to Login</a></p>
+</body>
+</html>

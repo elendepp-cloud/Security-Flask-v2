@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order #{{ order_id }}</title>
+</head>
+<body>
+
+    <h1>Order #{{ order_id }}</h1>
+
+    <p>Logged in as: <strong>{{ username }}</strong></p>
+
+    <hr>
+
+    <h2>Order Details</h2>
+
+    <p><strong>Product:</strong> {{ order.product }}</p>
+    <p><strong>Price:</strong> {{ order.price }}</p>
+    <p><strong>Status:</strong> {{ order.status }}</p>
+    <p><strong>Owner:</strong> {{ order.owner }}</p>
+
+    <hr>
+
+    <a href="/account">← Back to account</a>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stored XSS Secure</title>
+</head>
+<body>
+
+    <h1>Stored XSS </h1>
+
+    <form method="POST">
+
+        <label>Leave a message:</label>
+        <input type="text" name="message">
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <h2>Messages</h2>
+
+    {% for message in messages %}
+         <p>{{ message }}</p>
+ <p>{{ message }}</p>
+    {% endfor %}
+
+    <a href="/">Back to Home</a>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Path Traversal - Secure</title>
+</head>
+<body>
+
+    <h1>Path Traversal</h1>
+
+    <form method="GET">
+
+        <label>Enter a filename:</label>
+        <input type="text" name="filename">
+
+        <button type="submit">Read File</button>
+
+    </form>
+
+    {% if content %}
+        <h2>File content:</h2>
+        <pre>{{ content }}</pre>
+    {% endif %}
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+    <br>
+
+    <a href="/">Back to Home</a>
+
+</body>
+</html>

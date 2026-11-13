@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Command Injection</title>
+</head>
+<body>
+
+    <h1>Command Injection - Vulnerable</h1>
+
+    <form method="GET">
+
+        <label>Enter an IP address:</label>
+        <input type="text" name="host">
+
+        <button type="submit">Ping</button>
+
+    </form>
+
+    {% if output %}
+        <h2>Command output:</h2>
+        <pre>{{ output }}</pre>
+    {% endif %}
+
+    <br>
+
+    <a href="/">Back to Home</a>
+
+</body>
+</html>

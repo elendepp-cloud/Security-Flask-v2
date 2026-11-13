@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JWT Token</title>
+</head>
+<body>
+    <h1>Your JWT Token</h1>
+
+    <textarea rows="6" cols="70" readonly>{{ token }}</textarea>
+
+    <p>Choose a dashboard:</p>
+
+    <p>
+        <a href="/vulnerable?token={{ token | urlencode }}">
+            Vulnerable Dashboard
+        </a>
+    </p>
+
+    <p>
+        <a href="/secure?token={{ token | urlencode }}">
+            Secure Dashboard
+        </a>
+    </p>
+</body>
+</html>

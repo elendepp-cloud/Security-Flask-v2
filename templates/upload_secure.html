@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload - Secure</title>
+</head>
+
+<body>
+
+    <h1>File Upload </h1>
+
+    <p>Only selected file types are allowed.</p>
+
+    <form method="POST" enctype="multipart/form-data">
+
+        <label>Select a file:</label>
+        <input type="file" name="file">
+
+        <button type="submit">Upload</button>
+
+    </form>
+
+    {% if uploaded %}
+        <p>File uploaded successfully: {{ uploaded }}</p>
+    {% endif %}
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+
+    <br>
+
+    <a href="/">Back to Home</a>
+
+</body>
+</html>

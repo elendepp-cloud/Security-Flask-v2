@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Secure XSS</title>
+</head>
+<body>
+
+    <h1>Reflected XSS </h1>
+
+    <form method="GET" action="/xss-secure">
+
+        <label>Enter your name:</label>
+        <input type="text" name="name">
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    {% if name %}
+        <p>Hello, {{ name }}</p>
+    {% endif %}
+
+    <a href="/">Back to Home</a>
+
+</body>
+</html>

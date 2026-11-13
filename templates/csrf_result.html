@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSRF Result</title>
+</head>
+<body>
+
+<h1>CSRF Lab</h1>
+
+<p>
+    Username:
+    <strong>{{ username }}</strong>
+</p>
+
+<p>
+    New email:
+    <strong>{{ email }}</strong>
+</p>
+
+{% if vulnerable %}
+<p>
+    Vulnerable request accepted.
+</p>
+{% else %}
+<p>
+    Secure request accepted.
+</p>
+{% endif %}
+
+<hr>
+
+<a href="/csrf-account">Back to account</a>
+
+</body>
+</html>

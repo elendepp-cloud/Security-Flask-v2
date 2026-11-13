@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM XSS Secure</title>
+</head>
+<body>
+
+    <h1>DOM XSS </h1>
+
+    <input type="text" id="message">
+    <button onclick="showMessage()">Submit</button>
+
+    <div id="result"></div>
+
+    <script>
+        function showMessage() {
+            var message = document.getElementById("message").value;
+            document.getElementById("result").textContent = message;
+        }
+    </script>
+
+    <a href="/">Back to Home</a>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Race Condition</title>
+</head>
+<body>
+
+<h1>Race Condition - Coupon</h1>
+
+<p>User: Alice</p>
+
+<p>Balance: ${{ balance }}</p>
+
+<p>Coupon: SAVE10</p>
+
+<p>
+    Coupon status:
+    {% if coupon_used %}
+        Used
+    {% else %}
+        Available
+    {% endif %}
+</p>
+
+<hr>
+
+<h2>Vulnerable</h2>
+
+<a href="/vulnerable">
+    Apply Coupon
+</a>
+
+<h2> Secure</h2>
+
+<a href="/secure">
+    Apply Coupon
+</a>
+
+</body>
+</html>

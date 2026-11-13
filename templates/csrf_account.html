@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Account</title>
+</head>
+<body>
+
+<h1>My Account</h1>
+
+<p>
+    Username:
+    <strong>{{ username }}</strong>
+</p>
+
+<p>
+    Email:
+    <strong>{{ email }}</strong>
+</p>
+
+<hr>
+
+<h2>Change Email</h2>
+
+<form method="POST" action="/change-email-vulnerable">
+
+    <label>New email:</label>
+
+    <input
+        type="email"
+        name="email"
+        required
+    >
+
+    <input
+        type="hidden"
+        name="csrf_token"
+        value="{{ csrf_token() }}"
+    >
+
+    <br><br>
+
+    <button type="submit">
+        Change Email
+    </button>
+
+</form>
+
+<hr>
+
+<p>
+    <a href="/csrf-logout">Logout</a>
+</p>
+
+<hr>
+
+<h3>Advertisement</h3>
+
+<iframe
+    src="http://127.0.0.1:5001/ad"
+    width="100%"
+    height="300"
+    style="border: 1px solid #ccc;">
+</iframe>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSRF Secure</title>
+</head>
+<body>
+
+<h1>🟢 SSRF Secure</h1>
+
+<p>
+    This version only allows requests to the trusted domain:
+</p>
+
+<code>https://example.com</code>
+
+<hr>
+
+<form method="POST" action="/ssrf-secure">
+
+    <input
+        type="hidden"
+        name="csrf_token"
+        value="{{ csrf_token() }}"
+    >
+
+    <label>URL:</label><br>
+
+    <input
+        type="text"
+        name="url"
+        placeholder="https://example.com"
+        style="width:400px;"
+        required
+    >
+
+    <br><br>
+
+    <button type="submit">Fetch URL</button>
+
+</form>
+
+{% if error %}
+
+<hr>
+
+<p style="color:red;">
+    ❌ {{ error }}
+</p>
+
+{% endif %}
+
+{% if result %}
+
+<hr>
+
+<h2>Response</h2>
+
+<p>
+    Status: <strong>{{ result.status }}</strong>
+</p>
+
+<pre>{{ result.content }}</pre>
+
+{% endif %}
+
+<hr>
+
+<p style="color:green;">
+    🛡️ This endpoint uses an allowlist.
+</p>
+
+<a href="/ssrf">Go to Vulnerable SSRF</a>
+<br><br>
+<a href="/">Back to Home</a>
+
+</body>
+</html>
